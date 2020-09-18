@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление статьи в базу</title>
+</head>
+<body>
+<div class="container">
+
+    <form method="post" th:action="@{/article}" th:object="${article}">
+        <div class="form-group">
+            <label for="title">Введите заголовок</label>
+            <input id="title" placeholder="краткое описание" type="text" th:field="*{title}"  >
+        </div>
+        <div class="form-group">
+            <label for="text">Основной текст</label>
+            <textarea id="text"  placeholder="Основной текст" th:field="*{text}"></textarea>
+        </div>
+        <div><input type="submit" class="btn btn-primary" value="Сохранить в БД"></div>
+    </form>
+</div>
+</body>
+</html>
